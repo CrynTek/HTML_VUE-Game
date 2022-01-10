@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <title>Icon Counting</title>
+
+</head>
+<body>
+    <h1 class="d-flex justify-content-center pt-4">Icon Counting</h1>
+    <div class="container"  id="example-1">
+        <div class="container pt-5 d-flex justify-content-center" v-bind:style="{  backg }">
+            <button  v-on:click ="like(10)" class="btn btn-outline-info">
+                <i class="uil uil-thumbs-up"></i> 
+                <p>{{LIKE}}<br>+10</p> 
+                
+            </button>
+            <button v-on:click ="love(20)" class="btn btn-outline-danger">
+                <i class="uil uil-heart"></i>
+                <p>{{LOVE}}<br>+20</p>
+            </button>
+            <button v-on:click ="laugh(25)" class="btn btn-outline-warning">
+                <i class="uil uil-laughing"></i>
+                <p>{{LAUGH}}<br>+25</p>
+            </button>
+            <button v-on:click ="wow(30)" class="btn btn-outline-warning">
+                <i class="uil uil-surprise"></i>
+                <p>{{WOW}}<br>+30</p>
+            </button>
+            <button v-on:click ="sad(-15)"class="btn btn-outline-primary">
+                <i class="uil uil-frown"></i>
+                <p>{{SAD}}<br>-15</p>
+            </button>
+            <button v-on:click ="angry(-50)" class="btn btn-outline-danger">
+                <i class="uil uil-angry"></i>
+                <p>{{ANGRY}}<br>-50</p>
+            </button>
+        </div>
+        <p class="pt-5"> <span class="text-danger display-1 d-flex justify-content-center">{{ counter }} times.</span> </p>
+        <button onClick="window.location.reload();" class="container btn btn-outline-info d-flex justify-content-center" >Refresh Page</button>
+    </div>   
+</body>
+</html>
+<script>
+    var example1 = new Vue({
+            el: '#example-1',
+            data: {
+                counter: 0,
+                LIKE:0,
+                LOVE:0,
+                LAUGH:0,
+                WOW:0,
+                SAD:0,
+                ANGRY:0,
+            },
+            methods: {
+                like:function(i){
+                    this.LIKE+=1;
+                    this.counter+=i;
+                },
+                love:function(i){
+                    this.LOVE+=1;
+                    this.counter+=i;
+                },
+                laugh:function(i){
+                    this.LAUGH+=1;
+                    this.counter+=i;
+                },
+                wow:function(i){
+                    this.WOW+=1;
+                    this.counter+=i;
+                },
+                sad:function(i){
+                    this.SAD+=1;
+                    this.counter+=i;
+                },
+                angry:function(i){
+                    this.ANGRY+=1;
+                    this.counter+=i;
+                },                
+            } 
+            
+        })
+</script>
